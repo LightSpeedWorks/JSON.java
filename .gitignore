@@ -178,3 +178,5 @@ pip-log.txt
 ## Maven
 #################
 target/surefire*
+target/classes/*
+target/test-classes/*
