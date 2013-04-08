@@ -1,5 +1,5 @@
 /**
- * JSON Array Iterator {JSON配列イテレータ}
+ * JSON Iterator class {JSONイテレータ・クラス}
  */
 package com.lightspeedworks.json;
 
@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
 /**
- * JSON Iterator {JSONイテレータ}
+ * JSON Iterator class {JSONイテレータ・クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */

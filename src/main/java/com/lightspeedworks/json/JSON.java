@@ -1,12 +1,12 @@
 /**
- * JSONクラス
+ * JSON class {JSONクラス}
  */
 package com.lightspeedworks.json;
 
 import java.util.Iterator;
 
 /**
- * JSONクラス
+ * JSON class {JSONクラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -37,7 +37,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * creates a JSON number object from string value {JSON数値オブジェクトを作成(文字列値より)}
 	 *
 	 * @param strVal
-	 *            String value {文字列値}
+	 *            string value {文字列値}
 	 * @return JSON number object {JSON数値オブジェクト}
 	 * @throws NumberFormatException
 	 *             number format exception {数値形式例外}
@@ -77,7 +77,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {JSONブーリアン・オブジェクトを作成(文字列値より)}
 	 *
 	 * @param strVal
-	 *            String value {文字列値}
+	 *            string value {文字列値}
 	 * @return JSON boolean object {JSONブーリアン・オブジェクト
 	 * @throws Exception
 	 *             {例外}
@@ -98,7 +98,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * creates a JSON string object from string value {JSON文字列オブジェクトを作成(文字列値より)}
 	 *
 	 * @param strVal
-	 *            String value {文字列値}
+	 *            string value {文字列値}
 	 * @return JSON string object {JSON文字列オブジェクト}
 	 */
 	public static final JSON createString(String strVal) {
@@ -149,7 +149,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * creates a JSON key with value object from string key {JSONキーと値オブジェクトを作成(文字列)}
 	 *
 	 * @param strKey
-	 *            String key {キー文字列}
+	 *            String key {文字列キー}
 	 * @param objVal
 	 *            JSON object value {JSONオブジェクト値}
 	 * @return JSON key with value object {JSONキーと値オブジェクト}
@@ -188,7 +188,7 @@ public abstract class JSON implements Iterable<JSON> {
 	/**
 	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
 	 *
-	 * @return String value {文字列値}
+	 * @return string value {文字列値}
 	 */
 	@Override
 	public String toString() {
@@ -213,7 +213,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトの要素を取得する(文字列キーによる)}
 	 *
 	 * @param strKey
-	 *            String key {文字列キー}
+	 *            string key {文字列キー}
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public JSON get(String strKey) {
@@ -255,9 +255,9 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
-	 *            int key {整数キー}
+	 *            integer key {整数キー}
 	 * @param intVal
-	 *            int value {int値}
+	 *            integer value {整数値}
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public final JSON put(int intKey, int intVal) {
@@ -269,7 +269,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
-	 *            int key {整数キー}
+	 *            integer key {整数キー}
 	 * @param doubleVal
 	 *            double value {double値}
 	 * @return JSON object {JSONオブジェクト}
@@ -283,7 +283,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
-	 *            String key {文字列キー}
+	 *            string key {文字列キー}
 	 * @param objJSON
 	 *            JSON object {JSONオブジェクト}
 	 * @return JSON object {JSONオブジェクト}
@@ -298,7 +298,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
-	 *            String key {文字列キー}
+	 *            string key {文字列キー}
 	 * @param strVal
 	 *            string value {文字列値}
 	 * @return JSON object {JSONオブジェクト}
@@ -312,9 +312,9 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
-	 *            String key {文字列キー}
+	 *            string key {文字列キー}
 	 * @param intVal
-	 *            int value {int値}
+	 *            integer value {整数値}
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public final JSON put(String strKey, int intVal) {
@@ -326,7 +326,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
-	 *            String key {文字列キー}
+	 *            string key {文字列キー}
 	 * @param doubleVal
 	 *            double value {double値}
 	 * @return JSON object {JSONオブジェクト}
@@ -360,7 +360,7 @@ public abstract class JSON implements Iterable<JSON> {
 	/**
 	 * push a JSON object value into JSON array {JSONオブジェクト値をJSON配列に追加する}
 	 *
-	 * @param intVal int value {整数値}
+	 * @param intVal integer value {整数値}
 	 * @return JSON object
 	 */
 	public final JSON push(int intVal) {
@@ -390,7 +390,7 @@ public abstract class JSON implements Iterable<JSON> {
 	/**
 	 * returns JSON string format (instance) {JSON文字列を返す(インスタンス)}
 	 *
-	 * @return String of JSON format {JSON形式の文字列}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	public String stringify() {
 		return stringify(0);
@@ -401,8 +401,8 @@ public abstract class JSON implements Iterable<JSON> {
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
-	 *            int level of depth. {深さレベル}
-	 * @return String of JSON format {JSON形式の文字列}
+	 *            int level of depth {深さレベル}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	public String stringify(int level) {
 		return toString();
@@ -413,7 +413,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 *
 	 * @param objJSON
 	 *            JSON object value {JSONオブジェクト値}
-	 * @return String of JSON format {JSON形式の文字列}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	public static final String stringify(JSON objJSON) {
 		return objJSON.stringify(0);
@@ -423,7 +423,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * creates JSON object from JSON string format {文字列からJSONオブジェクトを生成}
 	 *
 	 * @param strJSON
-	 *            String of JSON format {JSON形式の文字列}
+	 *            string of JSON format {JSON形式の文字列}
 	 * @return JSON object value {JSONオブジェクト値}
 	 * @throws Exception
 	 *             {例外}
@@ -446,7 +446,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * JSON parse {文字列からJSONオブジェクトを生成(内部)}
 	 *
 	 * @param strJSON
-	 *            String of JSON format {JSON形式の文字列}
+	 *            string of JSON format {JSON形式の文字列}
 	 * @param n
 	 *            length of JSON string {JSON文字列の長さ}
 	 * @param pos

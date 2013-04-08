@@ -1,10 +1,10 @@
 /**
- * JSONDouble クラス
+ * JSON Double class {JSON実数クラス}
  */
 package com.lightspeedworks.json;
 
 /**
- * JSONDouble クラス
+ * JSON Double class {JSON実数クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -12,7 +12,7 @@ public class JSONDouble extends JSON {
 	/**
 	 * returns type of JSON number object {JSON数値オブジェクトの型を返す}
 	 *
-	 * @return JSONType.NUMBER
+	 * @return JSONType.NUMBER {数値型}
 	 */
 	@Override
 	public JSONType typeof() {

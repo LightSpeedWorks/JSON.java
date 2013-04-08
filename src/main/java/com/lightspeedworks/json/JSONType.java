@@ -10,27 +10,27 @@ package com.lightspeedworks.json;
  */
 public enum JSONType {
 	/**
-	 * 数値型
+	 * Number type {数値型}
 	 */
 	NUMBER,
 	/**
-	 * 文字列型
+	 * String type {文字列型}
 	 */
 	STRING,
 	/**
-	 * ブーリアン型
+	 * Boolean type {ブーリアン型}
 	 */
 	BOOLEAN,
 	/**
-	 * 配列型
+	 * Array type {配列型}
 	 */
 	ARRAY,
 	/**
-	 * オブジェクト型
+	 * Object type {オブジェクト型}
 	 */
 	OBJECT,
 	/**
-	 * ヌル型
+	 * Null type {ヌル型}
 	 */
 	NULL;
 }

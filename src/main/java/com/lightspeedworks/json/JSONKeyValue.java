@@ -1,12 +1,12 @@
 /**
- * JSONKeyValue クラス
+ * JSON Key with Value class {JSONキーと値クラス}
  */
 package com.lightspeedworks.json;
 
 import java.util.Iterator;
 
 /**
- * JSONKeyValue クラス
+ * JSON Key with Value class {JSONキーと値クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -16,15 +16,15 @@ public class JSONKeyValue extends JSON {
 	 */
 	private String strKey = "";
 	/**
-	 * JSON object value {オブジェクト値}
+	 * JSON object value {JSONオブジェクト値}
 	 */
 	private JSON objJSON = null;
 
 	/**
 	 * constractor {コンストラクタ}
 	 *
-	 * @param objKey object key value {オブジェクトキー値}
-	 * @param objJSON JSON object value {オブジェクト値}
+	 * @param objKey object key value {オブジェクト・キー値}
+	 * @param objJSON JSON object value {JSONオブジェクト値}
 	 */
 	public JSONKeyValue(Object objKey, JSON objJSON) {
 		this.strKey = objKey.toString();
@@ -35,7 +35,7 @@ public class JSONKeyValue extends JSON {
 	 * constractor {コンストラクタ}
 	 *
 	 * @param strKey string key value {文字列キー値}
-	 * @param objJSON JSON object value {オブジェクト値}
+	 * @param objJSON JSON object value {JSONオブジェクト値}
 	 */
 	public JSONKeyValue(String strKey, JSON objJSON) {
 		this.strKey = strKey;
@@ -46,7 +46,7 @@ public class JSONKeyValue extends JSON {
 	 * constractor {コンストラクタ}
 	 *
 	 * @param intKey int key value {整数キー値}
-	 * @param objJSON JSON object value {オブジェクト値}
+	 * @param objJSON JSON object value {JSONオブジェクト値}
 	 */
 	public JSONKeyValue(int intKey, JSON objJSON) {
 		this.strKey = Integer.toString(intKey);
@@ -54,9 +54,9 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns type of JSON key and value object {JSONキーと値オブジェクトの型を返す}
+	 * returns type of JSON key with value object {JSONキーと値オブジェクトの型を返す}
 	 *
-	 * @return JSONType
+	 * @return JSONType {JSON型}
 	 */
 	@Override
 	public JSONType typeof() {
@@ -64,9 +64,9 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns value of JSON key and value object {JSONキーと値オブジェクトの値を返す}
+	 * returns value of JSON key with value object {JSONキーと値オブジェクトの値を返す}
 	 *
-	 * @return value of JSON key and value object {JSONキーと値オブジェクトの値}
+	 * @return value of JSON key with value object {JSONキーと値オブジェクトの値}
 	 */
 	@Override
 	public Object valueOf() {
@@ -76,7 +76,7 @@ public class JSONKeyValue extends JSON {
 	/**
 	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
 	 *
-	 * @return String value {文字列値}
+	 * @return string value {文字列値}
 	 */
 	@Override
 	public String toString() {
@@ -86,7 +86,7 @@ public class JSONKeyValue extends JSON {
 	/**
 	 * returns JSON string format (instance) {JSON文字列を返す(インスタンス)}
 	 *
-	 * @return String of JSON format {JSON形式の文字列}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	@Override
 	public String stringify() {
@@ -98,7 +98,7 @@ public class JSONKeyValue extends JSON {
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
-	 *            int level of depth. {深さレベル}
+	 *            int level of depth {深さレベル}
 	 * @return JSON format string of JSON object {JSON形式の文字列}
 	 */
 	@Override

@@ -1,10 +1,10 @@
 /**
- * JSONNull クラス
+ * JSON Null class {JSONヌル・クラス}
  */
 package com.lightspeedworks.json;
 
 /**
- * JSONNull クラス
+ * JSON Null class {JSONヌル・クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -12,7 +12,7 @@ public class JSONNull extends JSON {
 	/**
 	 * returns type of JSON object {JSONオブジェクトの型を返す}
 	 *
-	 * @return JSONType.NULL
+	 * @return JSONType.NULL {ヌル型}
 	 */
 	@Override
 	public JSONType typeof() {
@@ -32,7 +32,7 @@ public class JSONNull extends JSON {
 	/**
 	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
 	 *
-	 * @return String value {文字列値}
+	 * @return string value {文字列値}
 	 */
 	@Override
 	public String toString() {

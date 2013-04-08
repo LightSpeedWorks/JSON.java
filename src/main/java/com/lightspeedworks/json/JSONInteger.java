@@ -1,10 +1,10 @@
 /**
- * JSONInteger クラス
+ * JSON Integer class {JSON整数クラス}
  */
 package com.lightspeedworks.json;
 
 /**
- * JSONInteger クラス
+ * JSON Integer class {JSON整数クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -12,7 +12,7 @@ public class JSONInteger extends JSON {
 	/**
 	 * returns type of JSON number object {JSON数値オブジェクトの型を返す}
 	 *
-	 * @return JSONType.NUMBER
+	 * @return JSONType.NUMBER {数値型}
 	 */
 	@Override
 	public JSONType typeof() {
@@ -34,9 +34,9 @@ public class JSONInteger extends JSON {
 	}
 
 	/**
-	 * returns value of JSON number/int object. {JSON整数オブジェクトの値を返す}
+	 * returns value of JSON number/integer object. {JSON整数オブジェクトの値を返す}
 	 *
-	 * @return int value of JSON number/int object {JSON整数オブジェクトの値}
+	 * @return integer value of JSON number/integer object {JSON整数オブジェクトの値}
 	 */
 	@Override
 	public Object valueOf() {

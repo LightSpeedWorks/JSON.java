@@ -1,10 +1,10 @@
 /**
- * JSONDouble クラス
+ * JSON Boolean class {JSONブーリアン・クラス}
  */
 package com.lightspeedworks.json;
 
 /**
- * JSONDouble クラス
+ * JSON Boolean class {JSONブーリアン・クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -12,7 +12,7 @@ public class JSONBoolean extends JSON {
 	/**
 	 * returns type of JSON boolean object {JSONブーリアン・オブジェクトの型を返す}
 	 *
-	 * @return JSONType.BOOLEAN
+	 * @return JSONType.BOOLEAN {ブーリアン型}
 	 */
 	@Override
 	public JSONType typeof() {

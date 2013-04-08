@@ -1,5 +1,5 @@
 /**
- * JSONArray クラス
+ * JSON Array class {JSON配列クラス}
  */
 package com.lightspeedworks.json;
 
@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**
- * JSONArray クラス
+ * JSON Array class {JSON配列クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
@@ -33,7 +33,7 @@ public class JSONArray extends JSON {
 	/**
 	 * returns type of JSON array {JSON配列の型を返す}
 	 *
-	 * @return JSONType.ARRAY
+	 * @return JSONType.ARRAY {配列型}
 	 */
 	@Override
 	public JSONType typeof() {
@@ -53,7 +53,7 @@ public class JSONArray extends JSON {
 	/**
 	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
 	 *
-	 * @return String value {文字列値}
+	 * @return string value {文字列値}
 	 */
 	@Override
 	public String toString() {
@@ -75,8 +75,8 @@ public class JSONArray extends JSON {
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
-	 *            int level of depth. {深さレベル}
-	 * @return String of JSON format {JSON形式の文字列}
+	 *            int level of depth {深さレベル}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	@Override
 	public String stringify(int level) {

@@ -1,23 +1,23 @@
 /**
- * JSONString クラス
+ * JSON String class {JSON文字列クラス}
  */
 package com.lightspeedworks.json;
 
 /**
- * JSONString クラス
+ * JSON String class {JSON文字列クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONString extends JSON {
 	/**
-	 * string value of JSON string object
+	 * string value of JSON string object {JSON文字列オブジェクトの文字列値}
 	 */
 	private String strVal = null;
 
 	/**
 	 * constractor {コンストラクタ}
 	 *
-	 * @param strVal string value of JSON string object
+	 * @param strVal string value of JSON string object {JSON文字列オブジェクトの文字列値}
 	 */
 	public JSONString(String strVal) {
 		super();
@@ -27,7 +27,7 @@ public class JSONString extends JSON {
 	/**
 	 * returns type of JSON string object {JSON文字列オブジェクトの型を返す}
 	 *
-	 * @return JSONType.STRING
+	 * @return JSONType.STRING {文字列型}
 	 */
 	@Override
 	public JSONType typeof() {
@@ -37,7 +37,7 @@ public class JSONString extends JSON {
 	/**
 	 * returns string value of JSON object {JSONオブジェクトの値(文字列)を返す}
 	 *
-	 * @return String value of JSON object {JSONオブジェクトの値(文字列)}
+	 * @return string value of JSON object {JSONオブジェクトの値(文字列)}
 	 */
 	@Override
 	public Object valueOf() {
@@ -47,7 +47,7 @@ public class JSONString extends JSON {
 	/**
 	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
 	 *
-	 * @return String value {文字列値}
+	 * @return string value {文字列値}
 	 */
 	@Override
 	public String toString() {
@@ -57,7 +57,7 @@ public class JSONString extends JSON {
 	/**
 	 * returns JSON string format (instance) {JSON文字列を返す(インスタンス)}
 	 *
-	 * @return String of JSON format {JSON形式の文字列}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	@Override
 	public String stringify() {
@@ -69,8 +69,8 @@ public class JSONString extends JSON {
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
-	 *            int level of depth. {深さレベル}
-	 * @return String of JSON format {JSON形式の文字列}
+	 *            int level of depth {深さレベル}
+	 * @return string of JSON format {JSON形式の文字列}
 	 */
 	@Override
 	public String stringify(int level) {
