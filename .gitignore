@@ -177,4 +177,4 @@ pip-log.txt
 #################
 ## Maven
 #################
-target/*
+target
