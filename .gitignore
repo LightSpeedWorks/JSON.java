@@ -3,7 +3,7 @@
 #################
 
 *.pydevproject
-.project
+#.project
 .metadata
 bin/
 tmp/
@@ -12,7 +12,7 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.classpath
+#.classpath
 .settings/
 .loadpath
 
@@ -173,3 +173,8 @@ pip-log.txt
 *.jar
 *.war
 *.ear
+
+#################
+## Maven
+#################
+target/surefire*
