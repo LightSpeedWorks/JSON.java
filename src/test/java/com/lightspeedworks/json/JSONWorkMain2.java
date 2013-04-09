@@ -3,14 +3,50 @@ package com.lightspeedworks.json;
 public class JSONWorkMain2 {
 
 	/**
+	 * main
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-
 		JSON obj;
 
 		try {
+			// NUMBER int
+			obj = JSON.parse("123");
+			int intNum = (Integer) obj.valueOf();
+			System.out.println(obj.typeof() + "\tint:\t" + obj.stringify() + "\t" + obj + "\t" + intNum);
+
+			// NUMBER double
+			obj = JSON.parse("12.3");
+			double doubleNum = (Double) obj.valueOf();
+			System.out.println(obj.typeof() + "\tdbl:\t" + obj.stringify() + "\t" + obj + "\t" + doubleNum);
+
+			// BOOLEAN
+			obj = JSON.parse("true");
+			boolean bool = (Boolean) obj.valueOf();
+			System.out.println(obj.typeof() + "\tbool:\t" + obj.stringify() + "\t" + obj + "\t" + bool);
+
+			// STRING
+			obj = JSON.parse("\"xyz\"");
+			String str = (String) obj.valueOf();
+			System.out.println(obj.typeof() + "\tstr:\t" + obj.stringify() + "\t" + obj + "\t" + str);
+
+			// NULL
+			obj = JSON.parse("null");
+			Object nil = (Object) obj.valueOf();
+			System.out.println(obj.typeof() + "\tnil:\t" + obj.stringify() + "\t" + obj + "\t" + nil);
+
+			// ARRAY
+			obj = JSON.parse("[]");
+			System.out.println(obj.typeof() + "\t[]:\t" + obj.stringify() + "\t" + obj);
+
+			// OBJECT
+			obj = JSON.parse("{}");
+			System.out.println(obj.typeof() + "\t{}:\t" + obj.stringify() + "\t" + obj);
+
+
+
+
 
 			obj = JSON.parse("[123, 456, \"xyz\"]");
 
