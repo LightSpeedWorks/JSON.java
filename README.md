@@ -4,9 +4,9 @@ JSON.java
 LightSpeedWorks pages {光速工房}
 
 Light JSON Library for Java
+{軽量JSONライブラリ(Java向け)}
 
-
-usage:
+usage: {使用方法:}
 
 ``` java
 JSON obj = JSON.parse("[123, 456]");
