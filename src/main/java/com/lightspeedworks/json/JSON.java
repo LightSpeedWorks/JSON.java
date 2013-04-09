@@ -12,6 +12,180 @@ import java.util.Iterator;
  */
 public abstract class JSON implements Iterable<JSON> {
 	/**
+	 * creates a JSON object {JSONオブジェクトを作成}
+	 *
+	 * @return JSON object {JSONオブジェクト}
+	 */
+	public static final JSON create() {
+		return new JSONObject();
+	}
+
+	/**
+	 * creates a JSON number/integer object {JSON整数オブジェクトを作成}
+	 *
+	 * @param intVal integer value {整数値}
+	 * @return JSON number/integer object {JSON整数オブジェクト}
+	 */
+	public static final JSON create(int intVal) {
+		return new JSONInteger(intVal);
+	}
+
+	/**
+	 * creates a JSON number/double object {JSON実数オブジェクトを作成}
+	 *
+	 * @param doubleVal double value {実数値}
+	 * @return JSON number/double object {JSON実数オブジェクト}
+	 */
+	public static final JSON create(double doubleVal) {
+		return new JSONDouble(doubleVal);
+	}
+
+	/**
+	 * creates a JSON boolean object {JSONブーリアン・オブジェクトを作成}
+	 *
+	 * @param boolVal boolean value {ブーリアン値}
+	 * @return JSON boolean object {JSONブーリアン・オブジェクト}
+	 */
+	public static final JSON create(boolean boolVal) {
+		return new JSONBoolean(boolVal);
+	}
+
+	/**
+	 * creates a JSON string object {JSON文字列オブジェクトを作成}
+	 *
+	 * @param strVal string value {文字列値}
+	 * @return JSON string object {JSON文字列オブジェクト}
+	 */
+	public static final JSON create(String strVal) {
+		return new JSONString(strVal);
+	}
+
+	/**
+	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 *
+	 * @param objVals Object... {オブジェクト...}
+	 * @return JSON array object {JSON配列オブジェクト}
+	 */
+	public static final JSON create(Object... objVals) {
+		JSON obj = new JSONArray();
+		for (Object e : objVals) {
+			if (e == null)
+				obj.push(createNull());
+			else if (e.getClass().equals(Integer.class))
+				obj.push(create((Integer) e));
+			else if (e.getClass().equals(Double.class))
+				obj.push(create((Double) e));
+			else if (e.getClass().equals(Boolean.class))
+				obj.push(create((Boolean) e));
+			else if (e.getClass().equals(String.class))
+				obj.push(create((String) e));
+			else if (e.getClass().equals(JSON.class))
+				obj.push((JSON) e);
+			else if (e.getClass().equals(JSONType.class))
+				switch ((JSONType) e) {
+				case NULL:
+					obj.push(createNull());
+					break;
+				case OBJECT:
+					obj.push(createObject());
+					break;
+				case ARRAY:
+					obj.push(createArray());
+					break;
+				case NUMBER:
+					obj.push(createNumber(0));
+					break;
+				case STRING:
+					obj.push(createString(""));
+					break;
+				case BOOLEAN:
+					obj.push(createBoolean(false));
+					break;
+				default:
+					obj.push(e.toString());
+					break;
+				}
+			else {
+				obj.push(createObject().put(e.getClass().getName(), e.toString()));
+			}
+		}
+		return obj;
+	}
+
+	/**
+	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 *
+	 * @param intVals int... {整数...}
+	 * @return JSON array object {JSON配列オブジェクト}
+	 */
+	public static final JSON create(int[] intVals) {
+		JSON obj = new JSONArray();
+		for (int e : intVals)
+			obj.push(e);
+		return obj;
+	}
+
+	/**
+	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 *
+	 * @param doubleVals double... {実数...}
+	 * @return JSON array object {JSON配列オブジェクト}
+	 */
+	public static final JSON create(double[] doubleVals) {
+		JSON obj = new JSONArray();
+		for (double e : doubleVals)
+			obj.push(e);
+		return obj;
+	}
+
+	/**
+	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 *
+	 * @param boolVals boolean... {ブーリアン...}
+	 * @return JSON array object {JSON配列オブジェクト}
+	 */
+	public static final JSON create(boolean[] boolVals) {
+		JSON obj = new JSONArray();
+		for (boolean e : boolVals)
+			obj.push(e);
+		return obj;
+	}
+
+	/**
+	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 *
+	 * @param strVals string... {文字列...}
+	 * @return JSON array object {JSON配列オブジェクト}
+	 */
+	public static final JSON create(String[] strVals) {
+		JSON obj = new JSONArray();
+		for (String e : strVals) {
+			if (e == null)
+				obj.push(createNull());
+			else
+				obj.push(e);
+		}
+		return obj;
+	}
+
+	/**
+	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 *
+	 * @param objVals JSON... {JSONオブジェクト...}
+	 * @return JSON array object {JSON配列オブジェクト}
+	 */
+	public static final JSON create(JSON[] objVals) {
+		JSON obj = new JSONArray();
+		for (JSON e : objVals) {
+			if (e == null)
+				obj.push(createNull());
+			else
+				obj.push(((JSONKeyValue) e).valueJSON());
+		}
+		return obj;
+	}
+
+	/**
 	 * creates a JSON number object from integer value {JSON整数オブジェクトを作成(整数値より)}
 	 *
 	 * @param intVal
@@ -271,11 +445,25 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @param intKey
 	 *            integer key {整数キー}
 	 * @param doubleVal
-	 *            double value {double値}
+	 *            double value {実数値}
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public final JSON put(int intKey, double doubleVal) {
 		return put(Integer.toString(intKey), createNumber(doubleVal));
+	}
+
+	/**
+	 * sets element into array or object and return self by int key
+	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
+	 *
+	 * @param intKey
+	 *            integer key {整数キー}
+	 * @param boolVal
+	 *            boolean value {ブーリアン値}
+	 * @return JSON object {JSONオブジェクト}
+	 */
+	public final JSON put(int intKey, boolean boolVal) {
+		return put(Integer.toString(intKey), createBoolean(boolVal));
 	}
 
 	/**
@@ -328,11 +516,25 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @param strKey
 	 *            string key {文字列キー}
 	 * @param doubleVal
-	 *            double value {double値}
+	 *            double value {実数値}
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public final JSON put(String strKey, double doubleVal) {
 		return put(strKey, createNumber(doubleVal));
+	}
+
+	/**
+	 * sets element into array or object and return self by string key
+	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
+	 *
+	 * @param strKey
+	 *            string key {文字列キー}
+	 * @param boolVal
+	 *            boolean value {ブーリアン値}
+	 * @return JSON object {JSONオブジェクト}
+	 */
+	public final JSON put(String strKey, boolean boolVal) {
+		return put(strKey, createBoolean(boolVal));
 	}
 
 	/**
@@ -358,7 +560,17 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * push a JSON object value into JSON array {JSONオブジェクト値をJSON配列に追加する}
+	 * push a string value into JSON array {文字列値をJSON配列に追加する}
+	 *
+	 * @param strVal string value {文字列値}
+	 * @return JSON object
+	 */
+	public final JSON push(String strVal) {
+		return push(createString(strVal));
+	}
+
+	/**
+	 * push a integer value into JSON array {整数値をJSON配列に追加する}
 	 *
 	 * @param intVal integer value {整数値}
 	 * @return JSON object
@@ -368,7 +580,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * push a JSON object value into JSON array {JSONオブジェクト値をJSON配列に追加する}
+	 * push a double value into JSON array {実数値をJSON配列に追加する}
 	 *
 	 * @param doubleVal double value {実数値}
 	 * @return JSON object
@@ -378,13 +590,13 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * push a JSON object value into JSON array {JSONオブジェクト値をJSON配列に追加する}
+	 * push a boolean value into JSON array {ブーリアン値をJSON配列に追加する}
 	 *
-	 * @param strVal string value {文字列値}
+	 * @param boolVal double value {ブーリアン値}
 	 * @return JSON object
 	 */
-	public final JSON push(String strVal) {
-		return push(createString(strVal));
+	public final JSON push(boolean boolVal) {
+		return push(createBoolean(boolVal));
 	}
 
 	/**
