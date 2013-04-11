@@ -23,3 +23,5 @@
 
 # Kazuaki add
 *.md    text
+*.java  text
+*.html  text
