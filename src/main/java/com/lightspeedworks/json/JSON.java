@@ -810,15 +810,47 @@ public abstract class JSON implements Iterable<JSON> {
 	 *
 	 * @param str
 	 *            String
-	 * @param pos
-	 * @return nextPos
+	 * @param pos int
+	 * @return nextPos int[]
+	 * @throws Exception
 	 */
-	protected static final int skipWhiteSpaces(String str, int n, int pos) {
+	protected static final int skipWhiteSpaces(String str, int n, int pos) throws Exception {
 		int i;
 
 		for (i = pos; i < n; ++i) {
 			char ch = str.charAt(i);
 
+			// line comment from "//" to end of line
+			if (ch == '/' && i + 1 < n && str.charAt(i + 1) == '/') {
+				for (i = i + 2; i < n; ++i) {
+					ch = str.charAt(i);
+					if (ch == CHAR_LF || ch == CHAR_CR) {
+						++i;
+						break;
+					}
+				}
+				if (i >= n)
+					return i;
+				ch = str.charAt(i);
+			}
+			// block comment from "/*" to "*/"
+			else if (ch == '/' && i + 1 < n && str.charAt(i + 1) == '*') {
+				boolean comment = true;
+				for (i = i + 2; i < n; ++i) {
+					ch = str.charAt(i);
+					if (ch == '*' && i + 1 < n && str.charAt(i + 1) == '/') {
+						i += 2;
+						comment = false;
+						break;
+					}
+				}
+				if (comment)
+					throw new Exception("Unexpected end of string, \"*/\" expected");
+				if (i >= n)
+					return i;
+				ch = str.charAt(i);
+			}
+			// skip white spaces, break if not white spaces
 			if (ch != CHAR_SPACE && ch != CHAR_TAB && ch != CHAR_LF
 					&& ch != CHAR_CR)
 				break;
