@@ -1,12 +1,12 @@
 JSON.java
 ==========================
 
-LightSpeedWorks pages {光速工房}
+LightSpeedWorks {光速工房}
 
-Light JSON Library for Java
+Light JSON Library for Java <br/>
 {軽量JSONライブラリ(Java向け)}
 
-[LightSpeedWorks/JSON.java#readme] (https://github.com/LightSpeedWorks/JSON.java#readme "LightSpeedWorks/JSON.java#readme")
+[LightSpeedWorks/JSON.java#readme] (https://github.com/LightSpeedWorks/JSON.java#readme)
 
 ## usage: {使用方法:}
 
