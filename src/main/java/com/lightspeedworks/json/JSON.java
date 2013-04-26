@@ -6,13 +6,13 @@ package com.lightspeedworks.json;
 import java.util.Iterator;
 
 /**
- * JSON class {JSONクラス}
+ * JSON class. {JSONクラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public abstract class JSON implements Iterable<JSON> {
 	/**
-	 * creates a JSON object {JSONオブジェクトを作成}
+	 * creates a JSON object. {JSONオブジェクトを作成}
 	 *
 	 * @return JSON object {JSONオブジェクト}
 	 */
@@ -21,9 +21,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON number/integer object {JSON整数オブジェクトを作成}
+	 * creates a JSON number/integer object. {JSON整数オブジェクトを作成}
 	 *
-	 * @param intVal integer value {整数値}
+	 * @param intVal
+	 *            integer value {整数値}
 	 * @return JSON number/integer object {JSON整数オブジェクト}
 	 */
 	public static final JSON create(int intVal) {
@@ -31,9 +32,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON number/double object {JSON実数オブジェクトを作成}
+	 * creates a JSON number/double object. {JSON実数オブジェクトを作成}
 	 *
-	 * @param doubleVal double value {実数値}
+	 * @param doubleVal
+	 *            double value {実数値}
 	 * @return JSON number/double object {JSON実数オブジェクト}
 	 */
 	public static final JSON create(double doubleVal) {
@@ -41,9 +43,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON boolean object {JSONブーリアン・オブジェクトを作成}
+	 * creates a JSON boolean object. {JSONブーリアン・オブジェクトを作成}
 	 *
-	 * @param boolVal boolean value {ブーリアン値}
+	 * @param boolVal
+	 *            boolean value {ブーリアン値}
 	 * @return JSON boolean object {JSONブーリアン・オブジェクト}
 	 */
 	public static final JSON create(boolean boolVal) {
@@ -51,9 +54,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON string object {JSON文字列オブジェクトを作成}
+	 * creates a JSON string object. {JSON文字列オブジェクトを作成}
 	 *
-	 * @param strVal string value {文字列値}
+	 * @param strVal
+	 *            string value {文字列値}
 	 * @return JSON string object {JSON文字列オブジェクト}
 	 */
 	public static final JSON create(String strVal) {
@@ -61,9 +65,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
-	 * @param objVals Object... {オブジェクト...}
+	 * @param objVals
+	 *            Object... {オブジェクト...}
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
 	public static final JSON create(Object... objVals) {
@@ -81,7 +86,7 @@ public abstract class JSON implements Iterable<JSON> {
 				obj.push(create((String) e));
 			else if (e.getClass().equals(JSON.class))
 				obj.push((JSON) e);
-			else if (e.getClass().equals(JSONType.class))
+			else if (e.getClass().equals(JSONType.class)) {
 				switch ((JSONType) e) {
 				case NULL:
 					obj.push(createNull());
@@ -105,7 +110,7 @@ public abstract class JSON implements Iterable<JSON> {
 					obj.push(e.toString());
 					break;
 				}
-			else {
+			} else {
 				obj.push(createObject().put(e.getClass().getName(), e.toString()));
 			}
 		}
@@ -113,9 +118,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
-	 * @param intVals int... {整数...}
+	 * @param intVals
+	 *            int... {整数...}
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
 	public static final JSON create(int[] intVals) {
@@ -126,9 +132,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
-	 * @param doubleVals double... {実数...}
+	 * @param doubleVals
+	 *            double... {実数...}
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
 	public static final JSON create(double[] doubleVals) {
@@ -139,9 +146,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
-	 * @param boolVals boolean... {ブーリアン...}
+	 * @param boolVals
+	 *            boolean... {ブーリアン...}
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
 	public static final JSON create(boolean[] boolVals) {
@@ -152,9 +160,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
-	 * @param strVals string... {文字列...}
+	 * @param strVals
+	 *            string... {文字列...}
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
 	public static final JSON create(String[] strVals) {
@@ -169,9 +178,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
-	 * @param objVals JSON... {JSONオブジェクト...}
+	 * @param objVals
+	 *            JSON... {JSONオブジェクト...}
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
 	public static final JSON create(JSON[] objVals) {
@@ -186,7 +196,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON number object from integer value {JSON整数オブジェクトを作成(整数値より)}
+	 * creates a JSON number object from integer value. {JSON整数オブジェクトを作成(整数値より)}
 	 *
 	 * @param intVal
 	 *            integer value {整数値}
@@ -197,7 +207,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON number object from double value {JSON実数オブジェクトを作成(実数値より)}
+	 * creates a JSON number object from double value. {JSON実数オブジェクトを作成(実数値より)}
 	 *
 	 * @param doubleVal
 	 *            double value {実数値}
@@ -208,13 +218,13 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON number object from string value {JSON数値オブジェクトを作成(文字列値より)}
+	 * creates a JSON number object from string value. {JSON数値オブジェクトを作成(文字列値より)}
 	 *
 	 * @param strVal
 	 *            string value {文字列値}
 	 * @return JSON number object {JSON数値オブジェクト}
-	 * @throws NumberFormatException
-	 *             number format exception {数値形式例外}
+	 * @throws Exception
+	 *             NumberFormatException number format exception {数値形式例外}
 	 */
 	public static final JSON createNumber(String strVal) throws Exception {
 		strVal = strVal.trim();
@@ -228,14 +238,13 @@ public abstract class JSON implements Iterable<JSON> {
 				// e2.printStackTrace(System.err);
 				String msg = e2.getMessage();
 
-				throw new NumberFormatException(
-						"createNumber: Unexpected number string: " + msg);
+				throw new NumberFormatException("createNumber: Unexpected number string: " + msg);
 			}
 		}
 	}
 
 	/**
-	 * creates a JSON boolean object from boolean value
+	 * creates a JSON boolean object from boolean value.
 	 * {JSONブーリアン・オブジェクトを作成(ブーリアン値より)}
 	 *
 	 * @param boolVal
@@ -247,7 +256,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON boolean object from string value
+	 * creates a JSON boolean object from string value.
 	 * {JSONブーリアン・オブジェクトを作成(文字列値より)}
 	 *
 	 * @param strVal
@@ -261,15 +270,15 @@ public abstract class JSON implements Iterable<JSON> {
 		JSON objJSON = JSON.parse(strVal);
 
 		if (objJSON.typeof() != JSONType.BOOLEAN)
-			throw new Exception("createBoolean: Unexpected boolean string: "
-					+ strVal);
+			throw new Exception("createBoolean: Unexpected boolean string: " + strVal);
 
 		return objJSON;
 		// return createBoolean(Boolean.parseBoolean(strVal));
 	}
 
 	/**
-	 * creates a JSON string object from string value {JSON文字列オブジェクトを作成(文字列値より)}
+	 * creates a JSON string object from string value.
+	 * {JSON文字列オブジェクトを作成(文字列値より)}
 	 *
 	 * @param strVal
 	 *            string value {文字列値}
@@ -280,7 +289,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON null object {JSONヌル・オブジェクトを作成}
+	 * creates a JSON null object. {JSONヌル・オブジェクトを作成}
 	 *
 	 * @return JSON null object {JSONヌル・オブジェクト}
 	 */
@@ -289,7 +298,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON array object {JSON配列オブジェクトを作成}
+	 * creates a JSON array object. {JSON配列オブジェクトを作成}
 	 *
 	 * @return JSON array object {JSON配列オブジェクト}
 	 */
@@ -298,7 +307,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON object {JSONオブジェクトを作成}
+	 * creates a JSON object. {JSONオブジェクトを作成}
 	 *
 	 * @return JSON object {JSONオブジェクト}
 	 */
@@ -307,7 +316,8 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON key with value object from object key {JSONキーと値オブジェクトを作成(オブジェクト)}
+	 * creates a JSON key with value object from object key.
+	 * {JSONキーと値オブジェクトを作成(オブジェクト)}
 	 *
 	 * @param objKey
 	 *            Object key {キーオブジェクト}
@@ -320,7 +330,8 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON key with value object from string key {JSONキーと値オブジェクトを作成(文字列)}
+	 * creates a JSON key with value object from string key.
+	 * {JSONキーと値オブジェクトを作成(文字列)}
 	 *
 	 * @param strKey
 	 *            String key {文字列キー}
@@ -333,7 +344,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates a JSON key with value objectfrom int key {JSONキーと値オブジェクトを作成(整数)}
+	 * creates a JSON key with value objectfrom int key. {JSONキーと値オブジェクトを作成(整数)}
 	 *
 	 * @param intKey
 	 *            int key {整数型のキー}
@@ -346,21 +357,21 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns type of JSON object {JSONオブジェクトの型を返す}
+	 * returns type of JSON object. {JSONオブジェクトの型を返す}
 	 *
 	 * @return JSONType{NUMBER/STRING/BOOLEAN/ARRAY/OBJECT/NULL}
 	 */
 	public abstract JSONType typeof();
 
 	/**
-	 * returns value of JSON object {JSONオブジェクトの値を返す}
+	 * returns value of JSON object. {JSONオブジェクトの値を返す}
 	 *
 	 * @return value of JSON object {JSONオブジェクトの値}
 	 */
 	public abstract Object valueOf();
 
 	/**
-	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
+	 * returns string value of JSON object. {JSONオブジェクトの文字列値を返す}
 	 *
 	 * @return string value {文字列値}
 	 */
@@ -370,7 +381,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns element of array or object by int key
+	 * returns element of array or object by int key.
 	 * {配列もしくはオブジェクトの要素を取得する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -378,12 +389,11 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public JSON get(int intKey) {
-		throw new Error("get(int): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("get(int): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * returns element of array or object by string key
+	 * returns element of array or object by string key.
 	 * {配列もしくはオブジェクトの要素を取得する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -391,12 +401,11 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public JSON get(String strKey) {
-		throw new Error("get(str): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("get(str): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -406,12 +415,11 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public JSON put(int intKey, JSON objJSON) {
-		throw new Error("put(int,JSON): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("put(int,JSON): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -425,7 +433,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -439,7 +447,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -453,7 +461,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -467,7 +475,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by string key
+	 * sets element into array or object and return self by string key.
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -477,12 +485,11 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @return JSON object {JSONオブジェクト}
 	 */
 	public JSON put(String strKey, JSON objJSON) {
-		throw new Error("put(str,JSON): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("put(str,JSON): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * sets element into array or object and return self by string key
+	 * sets element into array or object and return self by string key.
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -496,7 +503,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by string key
+	 * sets element into array or object and return self by string key.
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -510,7 +517,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by string key
+	 * sets element into array or object and return self by string key.
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -524,7 +531,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * sets element into array or object and return self by string key
+	 * sets element into array or object and return self by string key.
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -538,31 +545,30 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns length of array {配列の長さ}
+	 * returns length of array. {配列の長さ}
 	 *
 	 * @return int length of array {配列の長さ}
 	 */
 	public int length() {
-		throw new Error("length(): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("length(): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * push a JSON object value into JSON array {JSONオブジェクト値をJSON配列に追加する}
+	 * push a JSON object value into JSON array. {JSONオブジェクト値をJSON配列に追加する}
 	 *
 	 * @param objJSON
 	 *            JSON object value {JSONオブジェクト値}
 	 * @return JSON object
 	 */
 	public JSON push(JSON objJSON) {
-		throw new Error("push(JSON): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("push(JSON): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * push a string value into JSON array {文字列値をJSON配列に追加する}
+	 * push a string value into JSON array. {文字列値をJSON配列に追加する}
 	 *
-	 * @param strVal string value {文字列値}
+	 * @param strVal
+	 *            string value {文字列値}
 	 * @return JSON object
 	 */
 	public final JSON push(String strVal) {
@@ -570,9 +576,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * push a integer value into JSON array {整数値をJSON配列に追加する}
+	 * push a integer value into JSON array. {整数値をJSON配列に追加する}
 	 *
-	 * @param intVal integer value {整数値}
+	 * @param intVal
+	 *            integer value {整数値}
 	 * @return JSON object
 	 */
 	public final JSON push(int intVal) {
@@ -580,9 +587,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * push a double value into JSON array {実数値をJSON配列に追加する}
+	 * push a double value into JSON array. {実数値をJSON配列に追加する}
 	 *
-	 * @param doubleVal double value {実数値}
+	 * @param doubleVal
+	 *            double value {実数値}
 	 * @return JSON object
 	 */
 	public final JSON push(double doubleVal) {
@@ -590,9 +598,10 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * push a boolean value into JSON array {ブーリアン値をJSON配列に追加する}
+	 * push a boolean value into JSON array. {ブーリアン値をJSON配列に追加する}
 	 *
-	 * @param boolVal double value {ブーリアン値}
+	 * @param boolVal
+	 *            double value {ブーリアン値}
 	 * @return JSON object
 	 */
 	public final JSON push(boolean boolVal) {
@@ -600,7 +609,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns JSON string format (instance) {JSON文字列を返す(インスタンス)}
+	 * returns JSON string format. (instance) {JSON文字列を返す(インスタンス)}
 	 *
 	 * @return string of JSON format {JSON形式の文字列}
 	 */
@@ -609,7 +618,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns JSON string format with level of depth (instance)
+	 * returns JSON string format with level of depth. (instance)
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
@@ -621,7 +630,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns JSON string format (static) {JSON文字列を返す(静的)}
+	 * returns JSON string format. (static) {JSON文字列を返す(静的)}
 	 *
 	 * @param objJSON
 	 *            JSON object value {JSONオブジェクト値}
@@ -632,7 +641,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * creates JSON object from JSON string format {文字列からJSONオブジェクトを生成}
+	 * creates JSON object from JSON string format. {文字列からJSONオブジェクトを生成}
 	 *
 	 * @param strJSON
 	 *            string of JSON format {JSON形式の文字列}
@@ -648,14 +657,12 @@ public abstract class JSON implements Iterable<JSON> {
 		objJSON = parse(strJSON, n, 0, nextPos);
 		int i = skipWhiteSpaces(strJSON, n, nextPos[0]);
 		if (i < n)
-			throw new Exception(
-					"Unexpected token, end of string expected(JSON): "
-							+ strJSON.substring(i));
+			throw new Exception("Unexpected token, end of string expected(JSON): " + strJSON.substring(i));
 		return objJSON;
 	}
 
 	/**
-	 * JSON parse {文字列からJSONオブジェクトを生成(内部)}
+	 * JSON parse. {文字列からJSONオブジェクトを生成(内部)}
 	 *
 	 * @param strJSON
 	 *            string of JSON format {JSON形式の文字列}
@@ -669,8 +676,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 * @throws Exception
 	 *             {例外}
 	 */
-	private static final JSON parse(String strJSON, int n, int pos,
-			int[] nextPos) throws Exception {
+	private static JSON parse(String strJSON, int n, int pos, int[] nextPos) throws Exception {
 		// int n = str.length(); // for performance
 
 		int i = skipWhiteSpaces(strJSON, n, pos);
@@ -683,8 +689,7 @@ public abstract class JSON implements Iterable<JSON> {
 				sb.append(ch);
 				for (i = i + 1; i < n; ++i) {
 					ch = strJSON.charAt(i);
-					if (ch == '.' || ch == 'e' || ch == 'E' || ch == '+'
-							|| ch == '-' || (ch >= '0' && ch <= '9')) {
+					if (ch == '.' || ch == 'e' || ch == 'E' || ch == '+' || ch == '-' || (ch >= '0' && ch <= '9')) {
 						sb.append(ch);
 						continue;
 					}
@@ -695,22 +700,20 @@ public abstract class JSON implements Iterable<JSON> {
 			} else if (ch == 't' || ch == 'f') {
 				// boolean
 				if (strJSON.substring(i).startsWith("true")) {
-					nextPos[0] = i + 4;
+					nextPos[0] = i + "true".length();
 					return createBoolean(true);
 				} else if (strJSON.substring(i).startsWith("false")) {
-					nextPos[0] = i + 5;
+					nextPos[0] = i + "false".length();
 					return createBoolean(false);
 				} else
-					throw new Exception("Unexpected token(JSON boolean): "
-							+ strJSON.substring(i));
+					throw new Exception("Unexpected token(JSON boolean): " + strJSON.substring(i));
 			} else if (ch == 'n') {
 				// null
 				if (strJSON.substring(i).startsWith("null")) {
-					nextPos[0] = i + 4;
+					nextPos[0] = i + "null".length();
 					return createNull();
 				} else
-					throw new Exception("Unexpected token(JSON null): "
-							+ strJSON.substring(i));
+					throw new Exception("Unexpected token(JSON null): " + strJSON.substring(i));
 			} else if (ch == CHAR_DQUOTE) {
 				// string
 				StringBuilder sb = new StringBuilder("");
@@ -733,8 +736,7 @@ public abstract class JSON implements Iterable<JSON> {
 						else if (ch == 't')
 							sb.append(CHAR_TAB);
 						else if (ch == 'u') {
-							int code = Integer.parseInt(
-									strJSON.substring(j + 1, j + 5), 16);
+							int code = Integer.parseInt(strJSON.substring(j + 1, j + 5), 16);
 							sb.append((char) code);
 							j += 4;
 						} else
@@ -752,7 +754,7 @@ public abstract class JSON implements Iterable<JSON> {
 					return arr;
 				}
 				for (; i < n; ++i) {
-					int nextPos2[] = new int[] { 0 };
+					int[] nextPos2 = new int[] { 0 };
 					JSON val = parse(strJSON, n, i, nextPos2);
 					arr.push(val);
 					i = skipWhiteSpaces(strJSON, n, nextPos2[0]);
@@ -761,9 +763,7 @@ public abstract class JSON implements Iterable<JSON> {
 						return arr;
 					}
 					if (strJSON.charAt(i) != ',')
-						throw new Exception(
-								"Unexpected token, ',' expected(JSON array): "
-										+ strJSON.substring(i));
+						throw new Exception("Unexpected token, ',' expected(JSON array): " + strJSON.substring(i));
 				}
 				throw new Exception("Unexpected end of string(JSON array)");
 			} else if (ch == '{') {
@@ -775,17 +775,13 @@ public abstract class JSON implements Iterable<JSON> {
 					return obj;
 				}
 				for (; i < n; ++i) {
-					int nextPos2[] = new int[] { 0 };
+					int[] nextPos2 = new int[] { 0 };
 					JSON key = parse(strJSON, n, i, nextPos2);
 					if (key.typeof() != JSONType.STRING)
-						throw new Exception(
-								"Unexpected token, String key expected(JSON object): "
-										+ key.stringify());
+						throw new Exception("Unexpected token, String key expected(JSON object): " + key.stringify());
 					i = skipWhiteSpaces(strJSON, n, nextPos2[0]);
 					if (strJSON.charAt(i) != ':')
-						throw new Exception(
-								"Unexpected token, ':' expected(JSON object): "
-										+ strJSON.substring(i));
+						throw new Exception("Unexpected token, ':' expected(JSON object): " + strJSON.substring(i));
 					JSON val = parse(strJSON, n, i + 1, nextPos2);
 					obj.put(key.toString(), val);
 					i = skipWhiteSpaces(strJSON, n, nextPos2[0]);
@@ -793,26 +789,28 @@ public abstract class JSON implements Iterable<JSON> {
 						nextPos[0] = i + 1;
 						return obj;
 					} else if (strJSON.charAt(i) != ',')
-						throw new Exception(
-								"Unexpected token, ',' expected(JSON object): "
-										+ strJSON.substring(i));
+						throw new Exception("Unexpected token, ',' expected(JSON object): " + strJSON.substring(i));
 				}
 				throw new Exception("Unexpected end of string(JSON object)");
 			} else
-				throw new Exception("Unexpected token(JSON first char): " + ch
-						+ LINE_SEPARATOR + CHAR_TAB + strJSON.substring(i));
+				throw new Exception("Unexpected token(JSON first char): " + ch + LINE_SEPARATOR + CHAR_TAB
+						+ strJSON.substring(i));
 		}
 		return null;
 	}
 
 	/**
-	 * skips white spaces and returns position of string {空白をスキップし、文字列の位置を返す}
+	 * skips white spaces and returns position of string. {空白をスキップし、文字列の位置を返す}
 	 *
 	 * @param str
 	 *            String
-	 * @param pos int
-	 * @return nextPos int[]
+	 * @param n
+	 *            int length of string
+	 * @param pos
+	 *            int position of string
+	 * @return nextPos int
 	 * @throws Exception
+	 *             some exception
 	 */
 	protected static final int skipWhiteSpaces(String str, int n, int pos) throws Exception {
 		int i;
@@ -851,15 +849,14 @@ public abstract class JSON implements Iterable<JSON> {
 				ch = str.charAt(i);
 			}
 			// skip white spaces, break if not white spaces
-			if (ch != CHAR_SPACE && ch != CHAR_TAB && ch != CHAR_LF
-					&& ch != CHAR_CR)
+			if (ch != CHAR_SPACE && ch != CHAR_TAB && ch != CHAR_LF && ch != CHAR_CR)
 				break;
 		}
 		return i;
 	}
 
 	/**
-	 * escape string with double quotation {文字列クォート化}
+	 * escape string with double quotation. {文字列クォート化}
 	 *
 	 * @param str
 	 *            string {文字列}
@@ -893,12 +890,12 @@ public abstract class JSON implements Iterable<JSON> {
 	// ##########################################################################
 
 	/**
-	 * width for indent {インデントするかどうかを決める幅}
+	 * width for indent. {インデントするかどうかを決める幅}
 	 */
-	protected static int widthForIndent = 40;
+	static int widthForIndent = 40;
 
 	/**
-	 * get width for indent {インデントするかどうかを決める幅を取得}
+	 * get width for indent. {インデントするかどうかを決める幅を取得}
 	 *
 	 * @return width for indent {インデントするかどうかを決める幅}
 	 */
@@ -907,12 +904,11 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * set width for indent {インデントするかどうかを決める幅を設定}
+	 * set width for indent. {インデントするかどうかを決める幅を設定}
 	 *
 	 * @param width
-	 *            width for indent {インデントするかどうかを決める幅}
-	 *            -1: do not indent
-	 *            0 or more: width for indent
+	 *            width for indent {インデントするかどうかを決める幅} -1: do not indent 0 or
+	 *            more: width for indent
 	 */
 	public static final void setWidthForIndent(int width) {
 		if (width < -1)
@@ -923,12 +919,12 @@ public abstract class JSON implements Iterable<JSON> {
 	// ##########################################################################
 
 	/**
-	 * indent string {インデンテーション文字列}
+	 * indent string. {インデンテーション文字列}
 	 */
 	protected static String indentString = "  ";
 
 	/**
-	 * get indent string {インデンテーション文字列を取得}
+	 * get indent string. {インデンテーション文字列を取得}
 	 *
 	 * @return indent string {インデンテーション文字列}
 	 */
@@ -937,60 +933,51 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * set indent string {インデンテーション文字列を設定}
+	 * set indent string. {インデンテーション文字列を設定}
 	 *
 	 * @param indent
-	 *            indent String {インデンテーション文字列}
-	 *            valid only 1, 2, 4, 6, 8 spaces or tab
+	 *            indent String {インデンテーション文字列} valid only 1, 2, 4, 6, 8 spaces
+	 *            or tab
 	 */
 	public static final void setIndentString(String indent) {
-		if (indent.equals(" ") ||
-				indent.equals("  ") ||
-				indent.equals("    ") ||
-				indent.equals("      ") ||
-				indent.equals("        ") ||
-				indent.equals("\t")) {
+		if (indent.equals(" ") || indent.equals("  ") || indent.equals("    ") || indent.equals("      ")
+				|| indent.equals("        ") || indent.equals("\t")) {
 			indentString = indent;
-		}
-		else
+		} else
 			throw new Error("setIndentString: invalid indent string, expected 1, 2, 4, 6, 8 spaces or tab");
 	}
 
 	// ##########################################################################
 
 	/**
-	 * returns JSON iterator {JSONイテレータを返す}
+	 * returns JSON iterator. {JSONイテレータを返す}
 	 *
 	 * @return Iterator<JSON> {JSONイテレータ}
 	 */
 	public Iterator<JSON> iterator() {
-		throw new Error("iterator(): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("iterator(): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * returns string key of JSON Key Value object {JSONキー・バリュー・オブジェクトの文字列キーを返す}
+	 * returns string key of JSON Key Value object. {JSONキー・バリュー・オブジェクトの文字列キーを返す}
 	 *
 	 * @return key string {キー文字列}
 	 */
 	public String key() {
-		throw new Error("key(): Not Supported: JSON type: " + typeof()
-				+ " class: " + this.getClass().getName());
+		throw new Error("key(): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 	}
 
 	/**
-	 * returns string key array of JSON array or object (instance)
+	 * returns string key array of JSON array or object. (instance)
 	 * {JSON配列またはJSONオブジェクトのキー配列を返す(instance)}
 	 *
 	 * @return JSON array {JSON配列}
 	 */
 	public JSON keys() {
 		if (typeof() != JSONType.ARRAY && typeof() != JSONType.OBJECT)
-			throw new Error("keys(): Not Supported: JSON type: " + typeof()
-					+ " class: " + this.getClass().getName());
+			throw new Error("keys(): Not Supported: JSON type: " + typeof() + " class: " + this.getClass().getName());
 		if (valueOf() == null)
-			throw new Error("keys(): Not Supported: JSON type: null"
-					+ " class: " + this.getClass().getName());
+			throw new Error("keys(): Not Supported: JSON type: null" + " class: " + this.getClass().getName());
 
 		JSON keyArray = createArray();
 
@@ -1001,7 +988,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns string key array of JSON array or object (static)
+	 * returns string key array of JSON array or object. (static)
 	 * {JSON配列またはJSONオブジェクトのキー配列を返す(static)}
 	 *
 	 * @param objJSON
@@ -1013,49 +1000,48 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * line separator (CR/LF) {行区切り(復帰/改行)}
+	 * line separator. (CR/LF) {行区切り(復帰/改行)}
 	 */
-	public static final String LINE_SEPARATOR = System
-			.getProperty("line.separator");
+	public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 	/**
-	 * CR carriage return {復帰}
+	 * CR carriage return. {復帰}
 	 */
 	public static final char CHAR_CR = '\r';
 	/**
-	 * LF line feed {行送り}
+	 * LF line feed. {行送り}
 	 */
 	public static final char CHAR_LF = '\n';
 	/**
-	 * FF form feed {改ページ}
+	 * FF form feed. {改ページ}
 	 */
 	public static final char CHAR_FF = '\f';
 	/**
-	 * BS back space {バック・スペース}
+	 * BS back space. {バック・スペース}
 	 */
 	public static final char CHAR_BS = '\b';
 	/**
-	 * tab {タブ}
+	 * tab. {タブ}
 	 */
 	public static final char CHAR_TAB = '\t';
 	/**
-	 * space {空白}
+	 * space. {空白}
 	 */
 	public static final char CHAR_SPACE = ' ';
 	/**
-	 * double quote {二重引用符}
+	 * double quote. {二重引用符}
 	 */
 	public static final char CHAR_DQUOTE = '\"';
 	/**
-	 * back slash {バック・スラッシュ}
+	 * back slash. {バック・スラッシュ}
 	 */
 	public static final char CHAR_BACKSLASH = '\\';
 	/**
-	 * section separator {セクション区切り}
+	 * section separator. {セクション区切り}
 	 */
 	public static final char CHAR_SECTION_SEPARATOR = '/';
 
 	/**
-	 * returns Ini File format string {INIファイル形式文字列を返す}
+	 * returns Ini File format string. {INIファイル形式文字列を返す}
 	 *
 	 * @return String ini File format string {INIファイル形式文字列}
 	 */
@@ -1064,7 +1050,7 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * to Ini File format string {INIファイル形式文字列}
+	 * to Ini File format string. {INIファイル形式文字列}
 	 *
 	 * @param section
 	 *            String {セクション文字列}
@@ -1072,7 +1058,7 @@ public abstract class JSON implements Iterable<JSON> {
 	 *            String {キー文字列}
 	 * @return String ini File format string {INIファイル形式文字列}
 	 */
-	private final String toIniFile(String section, String key) {
+	private String toIniFile(String section, String key) {
 		StringBuilder sb = new StringBuilder();
 		String nextSection;
 
@@ -1139,8 +1125,7 @@ public abstract class JSON implements Iterable<JSON> {
 					complexObj.put(e.key(), ((JSONKeyValue) e).valueJSON());
 					break;
 				default:
-					throw new Error("toIniFile(): Not Supported: JSON type: "
-							+ e.typeof() + " class: "
+					throw new Error("toIniFile(): Not Supported: JSON type: " + e.typeof() + " class: "
 							+ this.getClass().getName());
 				}
 			}
@@ -1168,8 +1153,8 @@ public abstract class JSON implements Iterable<JSON> {
 			}
 			break;
 		default:
-			throw new Error("toIniFile(): Not Supported: JSON type: "
-					+ typeof() + " class: " + this.getClass().getName());
+			throw new Error("toIniFile(): Not Supported: JSON type: " + typeof() + " class: "
+					+ this.getClass().getName());
 		}
 		return sb.toString();
 	}
