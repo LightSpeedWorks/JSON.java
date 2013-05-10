@@ -1,6 +1,3 @@
-/**
- * JSON class {JSONクラス}
- */
 package com.lightspeedworks.json;
 
 import java.util.Iterator;
@@ -818,8 +815,8 @@ public abstract class JSON implements Iterable<JSON> {
 		for (i = pos; i < n; ++i) {
 			char ch = str.charAt(i);
 
-			// line comment from "//" to end of line
 			if (ch == '/' && i + 1 < n && str.charAt(i + 1) == '/') {
+				// line comment from "//" to end of line {ライン・コメント}
 				for (i = i + 2; i < n; ++i) {
 					ch = str.charAt(i);
 					if (ch == CHAR_LF || ch == CHAR_CR) {
@@ -830,9 +827,8 @@ public abstract class JSON implements Iterable<JSON> {
 				if (i >= n)
 					return i;
 				ch = str.charAt(i);
-			}
-			// block comment from "/*" to "*/"
-			else if (ch == '/' && i + 1 < n && str.charAt(i + 1) == '*') {
+			} else if (ch == '/' && i + 1 < n && str.charAt(i + 1) == '*') {
+				// block comment from "/*" to "*/" {ブロック・コメント}
 				boolean comment = true;
 				for (i = i + 2; i < n; ++i) {
 					ch = str.charAt(i);
@@ -959,7 +955,8 @@ public abstract class JSON implements Iterable<JSON> {
 	}
 
 	/**
-	 * returns string key of JSON Key Value object. {JSONキー・バリュー・オブジェクトの文字列キーを返す}
+	 * returns string key of JSON Key Value object.
+	 * {JSONキー・バリュー・オブジェクトの文字列キーを返す}
 	 *
 	 * @return key string {キー文字列}
 	 */

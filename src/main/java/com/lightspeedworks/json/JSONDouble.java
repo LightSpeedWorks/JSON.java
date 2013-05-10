@@ -1,16 +1,13 @@
-/**
- * JSON Double class {JSON実数クラス}
- */
 package com.lightspeedworks.json;
 
 /**
- * JSON Double class {JSON実数クラス}
+ * JSON Double class. {JSON実数クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONDouble extends JSON {
 	/**
-	 * returns type of JSON number object {JSON数値オブジェクトの型を返す}
+	 * returns type of JSON number object. {JSON数値オブジェクトの型を返す}
 	 *
 	 * @return JSONType.NUMBER {数値型}
 	 */
@@ -20,12 +17,12 @@ public class JSONDouble extends JSON {
 	}
 
 	/**
-	 * double value {実数値}
+	 * double value. {実数値}
 	 */
-	private double doubleVal;
+	double doubleVal;
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 *
 	 * @param doubleVal double value {実数値}
 	 */
@@ -34,7 +31,7 @@ public class JSONDouble extends JSON {
 	}
 
 	/**
-	 * returns value of JSON number/double object {JSON実数オブジェクトの値を返す}
+	 * returns value of JSON number/double object. {JSON実数オブジェクトの値を返す}
 	 *
 	 * @return double value of JSON number/double object {JSON実数オブジェクトの値}
 	 */

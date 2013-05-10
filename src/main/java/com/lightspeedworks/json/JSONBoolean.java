@@ -1,16 +1,13 @@
-/**
- * JSON Boolean class {JSONブーリアン・クラス}
- */
 package com.lightspeedworks.json;
 
 /**
- * JSON Boolean class {JSONブーリアン・クラス}
+ * JSON Boolean class. {JSONブーリアン・クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONBoolean extends JSON {
 	/**
-	 * returns type of JSON boolean object {JSONブーリアン・オブジェクトの型を返す}
+	 * returns type of JSON boolean object. {JSONブーリアン・オブジェクトの型を返す}
 	 *
 	 * @return JSONType.BOOLEAN {ブーリアン型}
 	 */
@@ -20,12 +17,12 @@ public class JSONBoolean extends JSON {
 	}
 
 	/**
-	 * boolean value {ブーリアン値}
+	 * boolean value. {ブーリアン値}
 	 */
-	private boolean boolVal = false;
+	boolean boolVal = false;
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 *
 	 * @param boolVal boolean value {ブーリアン値}
 	 */
@@ -34,7 +31,7 @@ public class JSONBoolean extends JSON {
 	}
 
 	/**
-	 * returns value of JSON boolean object {JSONブーリアン・オブジェクトの値を返す}
+	 * returns value of JSON boolean object. {JSONブーリアン・オブジェクトの値を返す}
 	 *
 	 * @return boolean value of JSON boolean object {JSONブーリアン・オブジェクトの値}
 	 */

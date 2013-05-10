@@ -1,36 +1,33 @@
-/**
- * JSON Type {JSON型}
- */
 package com.lightspeedworks.json;
 
 /**
- * JSON Type {JSON型}
+ * JSON Type. {JSON型}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public enum JSONType {
 	/**
-	 * Number type {数値型}
+	 * Number type. {数値型}
 	 */
 	NUMBER,
 	/**
-	 * String type {文字列型}
+	 * String type. {文字列型}
 	 */
 	STRING,
 	/**
-	 * Boolean type {ブーリアン型}
+	 * Boolean type. {ブーリアン型}
 	 */
 	BOOLEAN,
 	/**
-	 * Array type {配列型}
+	 * Array type. {配列型}
 	 */
 	ARRAY,
 	/**
-	 * Object type {オブジェクト型}
+	 * Object type. {オブジェクト型}
 	 */
 	OBJECT,
 	/**
-	 * Null type {ヌル型}
+	 * Null type. {ヌル型}
 	 */
 	NULL;
 }

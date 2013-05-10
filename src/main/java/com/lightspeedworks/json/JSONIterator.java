@@ -1,6 +1,3 @@
-/**
- * JSON Iterator class {JSONイテレータ・クラス}
- */
 package com.lightspeedworks.json;
 
 import java.util.Iterator;
@@ -8,15 +5,18 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
 /**
- * JSON Iterator class {JSONイテレータ・クラス}
+ * JSON Iterator class. {JSONイテレータ・クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 class JSONIterator implements Iterator<JSON> {
+	/**
+	 * iterator.
+	 */
 	Iterator<Entry<Object, JSON>> iterator;
 
 	/**
-	 * constructor {コンストラクタ}
+	 * constructor. {コンストラクタ}
 	 *
 	 * @param map LinkedHashMap<Integer or String, JSON>
 	 */
@@ -34,7 +34,7 @@ class JSONIterator implements Iterator<JSON> {
 	}
 
 	/**
-	 * next {次}
+	 * next. {次}
 	 *
 	 * @return next JSON
 	 */
@@ -44,7 +44,7 @@ class JSONIterator implements Iterator<JSON> {
 	}
 
 	/**
-	 * remove {削除}
+	 * remove. {削除}
 	 */
 	public void remove() {
 		iterator.remove();

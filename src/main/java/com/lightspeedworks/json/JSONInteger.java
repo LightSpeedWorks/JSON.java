@@ -1,16 +1,13 @@
-/**
- * JSON Integer class {JSON整数クラス}
- */
 package com.lightspeedworks.json;
 
 /**
- * JSON Integer class {JSON整数クラス}
+ * JSON Integer class. {JSON整数クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONInteger extends JSON {
 	/**
-	 * returns type of JSON number object {JSON数値オブジェクトの型を返す}
+	 * returns type of JSON number object. {JSON数値オブジェクトの型を返す}
 	 *
 	 * @return JSONType.NUMBER {数値型}
 	 */
@@ -20,12 +17,12 @@ public class JSONInteger extends JSON {
 	}
 
 	/**
-	 * integer value {整数値}
+	 * integer value. {整数値}
 	 */
 	private int intVal;
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 *
 	 * @param intVal integer value {整数値}
 	 */

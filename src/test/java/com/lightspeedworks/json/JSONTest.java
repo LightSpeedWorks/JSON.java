@@ -6,20 +6,24 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-//import com.lightspeedworks.json.JSON;
-
 /**
  *
  * @author Kauzaki
  */
 public class JSONTest extends TestCase {
+	/**
+	 * new line.
+	 */
 	static final String NL = JSON.LINE_SEPARATOR;
+	/**
+	 * double quote.
+	 */
 	static final String DQ = "\"";
 
 	/**
-	 * TestCaseを継承したJSONのテストケース
+	 * JSONTest. TestCaseを継承したJSONのテストケース
 	 *
-	 * @param arg0
+	 * @param arg0 String
 	 */
 	public JSONTest(String arg0) {
 		super(arg0);
@@ -27,14 +31,14 @@ public class JSONTest extends TestCase {
 	}
 
 	/**
-	 * fail if not exception occured {例外が発生しないなら失敗}
+	 * fail if not exception occured. {例外が発生しないなら失敗}
 	 */
 	private void failNoException() {
 		fail("Exceptionが発生するので、ここは通らない");
 	}
 
 	/**
-	 * @throws java.lang.Exception
+	 * @throws java.lang.Exception {例外}
 	 */
 	@Before
 	public void setUp() throws Exception {
@@ -44,19 +48,26 @@ public class JSONTest extends TestCase {
 	}
 
 	/**
-	 * @throws java.lang.Exception
+	 * @throws java.lang.Exception {例外}
 	 */
 	@After
 	public void tearDown() throws Exception {
 		//System.out.println("tearDown");
 	}
 
+	/**
+	 * NUMBER.
+	 */
+	static final String NUM = "NUMBER";
+
+	/**
+	 * number test.
+	 */
 	@Test
 	public void test0010Number123int() {
 		JSON obj = null;
 		int num = 123;
 		String expStr = "123";
-		String NUM = "NUMBER";
 
 		obj = JSON.createNumber(num);
 		assertNotNull(obj);
@@ -85,12 +96,14 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + NUM + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * number test.
+	 */
 	@Test
 	public void test0020Number123double() {
 		JSON obj = null;
 		double num = 1.23;
 		String expStr = "1.23";
-		String NUM = "NUMBER";
 
 		obj = JSON.createNumber(num);
 		assertNotNull(obj);
@@ -119,13 +132,15 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + NUM + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * number test.
+	 */
 	@Test
 	public void test0030Number123intStr() {
 		JSON obj = null;
 		int num = 123;
 		String srcStr = " 123 ";
 		String expStr = "123";
-		String NUM = "NUMBER";
 
 		try {
 			obj = JSON.createNumber(srcStr);
@@ -159,13 +174,15 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + NUM + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * number test.
+	 */
 	@Test
 	public void test0040Number123doubleStr() {
 		JSON obj = null;
 		double num = 1.23;
 		String srcStr = " 1.23 ";
 		String expStr = "1.23";
-		String NUM = "NUMBER";
 
 		try {
 			obj = JSON.createNumber(srcStr);
@@ -199,6 +216,9 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + NUM + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * number test.
+	 */
 	@Test
 	public void test0050Number123xintStr() {
 		JSON obj = null;
@@ -216,6 +236,9 @@ public class JSONTest extends TestCase {
 		assertNull(obj);
 	}
 
+	/**
+	 * number test.
+	 */
 	@Test
 	public void test0060Number123xdoubleStr() {
 		JSON obj = null;
@@ -233,12 +256,19 @@ public class JSONTest extends TestCase {
 		assertNull(obj);
 	}
 
+	/**
+	 * BOOLEAN.
+	 */
+	static final String BOOL = "BOOLEAN";
+
+	/**
+	 * boolean test.
+	 */
 	@Test
 	public void test0110BooleanTrue() {
 		JSON obj = null;
 		boolean bool = true;
 		String expStr = "true";
-		String BOOL = "BOOLEAN";
 
 		obj = JSON.createBoolean(bool);
 		assertNotNull(obj);
@@ -267,12 +297,14 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + BOOL + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * boolean test.
+	 */
 	@Test
 	public void test0120BooleanFalse() {
 		JSON obj = null;
 		boolean bool = false;
 		String expStr = "false";
-		String BOOL = "BOOLEAN";
 
 		obj = JSON.createBoolean(bool);
 		assertNotNull(obj);
@@ -301,13 +333,15 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + BOOL + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * boolean test.
+	 */
 	@Test
 	public void test0130BooleanTrueStr() {
 		JSON obj = null;
 		boolean bool = true;
 		String srcStr = " true ";
 		String expStr = "true";
-		String BOOL = "BOOLEAN";
 
 		try {
 			obj = JSON.createBoolean(srcStr);
@@ -342,13 +376,15 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + BOOL + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * boolean test.
+	 */
 	@Test
 	public void test0140BooleanFalseStr() {
 		JSON obj = null;
 		boolean bool = false;
 		String srcStr = " false ";
 		String expStr = "false";
-		String BOOL = "BOOLEAN";
 
 		try {
 			obj = JSON.createBoolean(srcStr);
@@ -383,6 +419,9 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + BOOL + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * boolean test.
+	 */
 	@Test
 	public void test0150BooleanTruexStr() {
 		JSON obj = null;
@@ -400,6 +439,9 @@ public class JSONTest extends TestCase {
 		assertNull(obj);
 	}
 
+	/**
+	 * boolean test.
+	 */
 	@Test
 	public void test0160BooleanFalseyStr() {
 		JSON obj = null;
@@ -417,13 +459,20 @@ public class JSONTest extends TestCase {
 		assertNull(obj);
 	}
 
+	/**
+	 * STRING.
+	 */
+	static final String STR = "STRING";
+
+	/**
+	 * string test.
+	 */
 	@Test
 	public void test0210StringNormal() {
 		JSON obj = null;
 		String srcStr = " string ";
 		String expStr = " string ";
 		String quoStr = "\" string \"";
-		String STR = "STRING";
 
 		obj = JSON.createString(srcStr);
 		assertNotNull(obj);
@@ -452,13 +501,15 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + STR + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * string test.
+	 */
 	@Test
 	public void test0220StringQuote() {
 		JSON obj = null;
 		String srcStr = " str\"ing ";
 		String expStr = " str\"ing ";
 		String quoStr = "\" str\\\"ing \"";
-		String STR = "STRING";
 
 		obj = JSON.createString(srcStr);
 		assertNotNull(obj);
@@ -487,11 +538,18 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + STR + "]" + NL + "value=" + quoStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * NULL.
+	 */
+	static final String NULL = "NULL";
+
+	/**
+	 * null test.
+	 */
 	@Test
 	public void test0310Null() {
 		JSON obj = null;
 		String expStr = "null";
-		String NULL = "NULL";
 
 		obj = JSON.createNull();
 		assertNotNull(obj);
@@ -520,11 +578,18 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + NULL + "]" + NL + "value=" + expStr + NL, obj.toIniFile());
 	}
 
+	/**
+	 * ARRAY.
+	 */
+	static final String ARR = "ARRAY";
+
+	/**
+	 * array test.
+	 */
 	@Test
 	public void test0410ArrayZero() {
 		JSON obj = null;
 		String expStr = "[]";
-		String ARR = "ARRAY";
 
 		obj = JSON.createArray();
 		assertNotNull(obj);
@@ -553,33 +618,35 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + ARR + "]" + NL, obj.toIniFile());
 	}
 
+	/**
+	 * array test.
+	 */
 	@Test
 	public void test0420ArrayIndent() {
 		JSON obj = null;
 		String expStr = "[123,1.23,true,false,,str,abc\\xyz,null,[],{}]";
-		String quoStr = "[" + NL +
-				"  123," + NL +
-				"  1.23," + NL +
-				"  true," + NL +
-				"  false," + NL +
-				"  null," + NL +
-				"  \"str\"," + NL +
-				"  \"abc\\\\xyz\"," + NL +
-				"  null," + NL +
-				"  []," + NL +
-				"  {}" + NL +
-				"]";
-		String iniStr = "[ARRAY]" + NL +
-				"0=123" + NL +
-				"1=1.23" + NL +
-				"2=true" + NL +
-				"3=false" + NL +
-				"5=str" + NL +
-				"6=\"abc\\\\xyz\"" + NL +
-				"7=null" + NL +
-				"[8]" + NL +
-				"[9]" + NL;
-		String ARR = "ARRAY";
+		String quoStr = "[" + NL
+				+ "  123," + NL
+				+ "  1.23," + NL
+				+ "  true," + NL
+				+ "  false," + NL
+				+ "  null," + NL
+				+ "  \"str\"," + NL
+				+ "  \"abc\\\\xyz\"," + NL
+				+ "  null," + NL
+				+ "  []," + NL
+				+ "  {}" + NL
+				+ "]";
+		String iniStr = "[ARRAY]" + NL
+				+ "0=123" + NL
+				+ "1=1.23" + NL
+				+ "2=true" + NL
+				+ "3=false" + NL
+				+ "5=str" + NL
+				+ "6=\"abc\\\\xyz\"" + NL
+				+ "7=null" + NL
+				+ "[8]" + NL
+				+ "[9]" + NL;
 
 		obj = JSON.createArray();
 		assertNotNull(obj);
@@ -622,22 +689,24 @@ public class JSONTest extends TestCase {
 		assertEquals(iniStr, obj.toIniFile());
 	}
 
+	/**
+	 * array test.
+	 */
 	@Test
 	public void test0430ArrayNoIndent() {
 		JSON obj = null;
 		String expStr = "[123,1.23,true,false,,str,abc\\xyz,null,[],{}]";
 		String quoStr = "[123, 1.23, true, false, null, \"str\", \"abc\\\\xyz\", null, [], {}]";
-		String iniStr = "[ARRAY]" + NL +
-				"0=123" + NL +
-				"1=1.23" + NL +
-				"2=true" + NL +
-				"3=false" + NL +
-				"5=str" + NL +
-				"6=\"abc\\\\xyz\"" + NL +
-				"7=null" + NL +
-				"[8]" + NL +
-				"[9]" + NL;
-		String ARR = "ARRAY";
+		String iniStr = "[ARRAY]" + NL
+				+ "0=123" + NL
+				+ "1=1.23" + NL
+				+ "2=true" + NL
+				+ "3=false" + NL
+				+ "5=str" + NL
+				+ "6=\"abc\\\\xyz\"" + NL
+				+ "7=null" + NL
+				+ "[8]" + NL
+				+ "[9]" + NL;
 
 		JSON.setWidthForIndent(-1); // do not indent
 
@@ -679,6 +748,9 @@ public class JSONTest extends TestCase {
 		assertEquals(iniStr, obj.toIniFile());
 	}
 
+	/**
+	 * array test.
+	 */
 	@Test
 	public void test0440Array() {
 		JSON obj = null;
@@ -703,11 +775,18 @@ public class JSONTest extends TestCase {
 		assertNotSame(expStr, obj.stringify());
 	}
 
+	/**
+	 * OBJECT.
+	 */
+	static final String OBJ = "OBJECT";
+
+	/**
+	 * object test.
+	 */
 	@Test
 	public void test0510ObjectZero() {
 		JSON obj = null;
 		String expStr = "{}";
-		String OBJ = "OBJECT";
 
 		obj = JSON.createObject();
 		assertNotNull(obj);
@@ -738,32 +817,34 @@ public class JSONTest extends TestCase {
 		assertEquals("[" + OBJ + "]" + NL, obj.toIniFile());
 	}
 
+	/**
+	 * object test.
+	 */
 	@Test
 	public void test0520ObjectIndent() {
 		JSON obj = null;
 		String expStr = "{a:123,b:1.23,c:true,d:false,5:str,6:abc\\xyz,e:null,f:[],g:{}}";
-		String quoStr = "{" + NL +
-				"  \"a\": 123," + NL +
-				"  \"b\": 1.23," + NL +
-				"  \"c\": true," + NL +
-				"  \"d\": false," + NL +
-				"  \"5\": \"str\"," + NL +
-				"  \"6\": \"abc\\\\xyz\"," + NL +
-				"  \"e\": null," + NL +
-				"  \"f\": []," + NL +
-				"  \"g\": {}" + NL +
-				"}";
-		String iniStr = "[OBJECT]" + NL +
-				"a=123" + NL +
-				"b=1.23" + NL +
-				"c=true" + NL +
-				"d=false" + NL +
-				"5=str" + NL +
-				"6=\"abc\\\\xyz\"" + NL +
-				"e=null" + NL +
-				"[f]" + NL +
-				"[g]" + NL;
-		String OBJ = "OBJECT";
+		String quoStr = "{" + NL
+				+ "  \"a\": 123," + NL
+				+ "  \"b\": 1.23," + NL
+				+ "  \"c\": true," + NL
+				+ "  \"d\": false," + NL
+				+ "  \"5\": \"str\"," + NL
+				+ "  \"6\": \"abc\\\\xyz\"," + NL
+				+ "  \"e\": null," + NL
+				+ "  \"f\": []," + NL
+				+ "  \"g\": {}" + NL
+				+ "}";
+		String iniStr = "[OBJECT]" + NL
+				+ "a=123" + NL
+				+ "b=1.23" + NL
+				+ "c=true" + NL
+				+ "d=false" + NL
+				+ "5=str" + NL
+				+ "6=\"abc\\\\xyz\"" + NL
+				+ "e=null" + NL
+				+ "[f]" + NL
+				+ "[g]" + NL;
 
 		obj = JSON.createObject();
 		assertNotNull(obj);
@@ -804,24 +885,26 @@ public class JSONTest extends TestCase {
 		assertEquals(iniStr, obj.toIniFile());
 	}
 
+	/**
+	 * object test.
+	 */
 	@Test
 	public void test0530ObjectNoIndent() {
 		JSON obj = null;
 		String expStr = "{a:123,b:1.23,c:true,d:false,5:str,6:abc\\xyz,e:null,f:[],g:{}}";
-		String quoStr = "{\"a\": 123, \"b\": 1.23, \"c\": true, \"d\": false, " +
-				"\"5\": \"str\", \"6\": \"abc\\\\xyz\", \"e\": null, " +
-				"\"f\": [], \"g\": {}}";
-		String iniStr = "[OBJECT]" + NL +
-				"a=123" + NL +
-				"b=1.23" + NL +
-				"c=true" + NL +
-				"d=false" + NL +
-				"5=str" + NL +
-				"6=\"abc\\\\xyz\"" + NL +
-				"e=null" + NL +
-				"[f]" + NL +
-				"[g]" + NL;
-		String OBJ = "OBJECT";
+		String quoStr = "{\"a\": 123, \"b\": 1.23, \"c\": true, \"d\": false, "
+				+ "\"5\": \"str\", \"6\": \"abc\\\\xyz\", \"e\": null, "
+				+ "\"f\": [], \"g\": {}}";
+		String iniStr = "[OBJECT]" + NL
+				+ "a=123" + NL
+				+ "b=1.23" + NL
+				+ "c=true" + NL
+				+ "d=false" + NL
+				+ "5=str" + NL
+				+ "6=\"abc\\\\xyz\"" + NL
+				+ "e=null" + NL
+				+ "[f]" + NL
+				+ "[g]" + NL;
 
 		JSON.setWidthForIndent(-1); // do not indent
 
@@ -866,6 +949,9 @@ public class JSONTest extends TestCase {
 		JSON.setWidthForIndent(40);
 	}
 
+	/**
+	 * object test.
+	 */
 	@Test
 	public void test0540Object() {
 		JSON obj = null;
@@ -896,5 +982,4 @@ public class JSONTest extends TestCase {
 		assertEquals(expStr2, obj.stringify());
 		assertNotSame(expStr, obj.stringify());
 	}
-
 }

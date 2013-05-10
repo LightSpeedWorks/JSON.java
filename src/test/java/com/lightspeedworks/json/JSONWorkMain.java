@@ -1,25 +1,20 @@
-/**
- * JSONクラスのテスト
- */
 package com.lightspeedworks.json;
 
 import java.io.File;
 
-import com.lightspeedworks.json.JSON;
-
 /**
- * JSONクラスのテスト
+ * JSON class test. {JSONクラスのテスト}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONWorkMain {
 
 	/**
-	 * main メイン・メソッド
+	 * main. メイン・メソッド
 	 *
-	 * @param args
+	 * @param args String...
 	 */
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		String path = new File(new File("").getAbsolutePath()).getName();
 		//if ("bin".equals(path))
 		System.out.println(path);

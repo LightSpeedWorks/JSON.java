@@ -1,27 +1,24 @@
-/**
- * JSON Key with Value class {JSONキーと値クラス}
- */
 package com.lightspeedworks.json;
 
 import java.util.Iterator;
 
 /**
- * JSON Key with Value class {JSONキーと値クラス}
+ * JSON Key with Value class. {JSONキーと値クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONKeyValue extends JSON {
 	/**
-	 * string key value {文字列キー値}
+	 * string key value. {文字列キー値}
 	 */
 	private String strKey = "";
 	/**
-	 * JSON object value {JSONオブジェクト値}
+	 * JSON object value. {JSONオブジェクト値}
 	 */
 	private JSON objJSON = null;
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 *
 	 * @param objKey object key value {オブジェクト・キー値}
 	 * @param objJSON JSON object value {JSONオブジェクト値}
@@ -32,7 +29,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 *
 	 * @param strKey string key value {文字列キー値}
 	 * @param objJSON JSON object value {JSONオブジェクト値}
@@ -43,7 +40,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 *
 	 * @param intKey int key value {整数キー値}
 	 * @param objJSON JSON object value {JSONオブジェクト値}
@@ -54,7 +51,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns type of JSON key with value object {JSONキーと値オブジェクトの型を返す}
+	 * returns type of JSON key with value object. {JSONキーと値オブジェクトの型を返す}
 	 *
 	 * @return JSONType {JSON型}
 	 */
@@ -64,7 +61,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns value of JSON key with value object {JSONキーと値オブジェクトの値を返す}
+	 * returns value of JSON key with value object. {JSONキーと値オブジェクトの値を返す}
 	 *
 	 * @return value of JSON key with value object {JSONキーと値オブジェクトの値}
 	 */
@@ -74,7 +71,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
+	 * returns string value of JSON object. {JSONオブジェクトの文字列値を返す}
 	 *
 	 * @return string value {文字列値}
 	 */
@@ -84,7 +81,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns JSON string format (instance) {JSON文字列を返す(インスタンス)}
+	 * returns JSON string format. (instance) {JSON文字列を返す(インスタンス)}
 	 *
 	 * @return string of JSON format {JSON形式の文字列}
 	 */
@@ -94,7 +91,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns JSON string format with level of depth (instance)
+	 * returns JSON string format with level of depth. (instance)
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
@@ -107,7 +104,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns string key of JSON Key Value object {JSONキー・バリュー・オブジェクトの文字列キーを返す}
+	 * returns string key of JSON Key Value object. {JSONキー・バリュー・オブジェクトの文字列キーを返す}
 	 *
 	 * @return key string {キー文字列}
 	 */
@@ -117,7 +114,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns JSON iterator {JSONイテレータを返す}
+	 * returns JSON iterator. {JSONイテレータを返す}
 	 *
 	 * @return Iterator<JSON> {JSONイテレータ}
 	 */
@@ -127,7 +124,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns length of array {配列の長さ}
+	 * returns length of array. {配列の長さ}
 	 *
 	 * @return int length of array {配列の長さ}
 	 */
@@ -136,7 +133,7 @@ public class JSONKeyValue extends JSON {
 	}
 
 	/**
-	 * returns value of JSON object {JSONオブジェクトを返す}
+	 * returns value of JSON object. {JSONオブジェクトを返す}
 	 *
 	 * @return JSON object {JSONオブジェクト}
 	 */

@@ -1,6 +1,3 @@
-/**
- * JSON Array class {JSON配列クラス}
- */
 package com.lightspeedworks.json;
 
 import java.util.ArrayList;
@@ -8,30 +5,29 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**
- * JSON Array class {JSON配列クラス}
+ * JSON Array class. {JSON配列クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONArray extends JSON {
 	/**
-	 * contents of array {配列の内容}
+	 * contents of array. {配列の内容}
 	 */
-	private LinkedHashMap<Object, JSON> mapArray = null;
+	LinkedHashMap<Object, JSON> mapArray = null;
 	/**
-	 * length of array {配列の長さ}
+	 * length of array. {配列の長さ}
 	 */
-	private int length = 0;
+	int length = 0;
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 */
 	public JSONArray() {
-		super();
 		this.mapArray = new LinkedHashMap<Object, JSON>();
 	}
 
 	/**
-	 * returns type of JSON array {JSON配列の型を返す}
+	 * returns type of JSON array. {JSON配列の型を返す}
 	 *
 	 * @return JSONType.ARRAY {配列型}
 	 */
@@ -41,7 +37,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * returns value of JSON object {JSONオブジェクトの値を返す}
+	 * returns value of JSON object. {JSONオブジェクトの値を返す}
 	 *
 	 * @return value of JSON object {JSONオブジェクトの値}
 	 */
@@ -51,7 +47,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
+	 * returns string value of JSON object. {JSONオブジェクトの文字列値を返す}
 	 *
 	 * @return string value {文字列値}
 	 */
@@ -71,7 +67,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * returns JSON string format with level of depth (instance)
+	 * returns JSON string format with level of depth. (instance)
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
@@ -130,7 +126,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * returns element of array or object by int key
+	 * returns element of array or object by int key.
 	 * {配列もしくはオブジェクトの要素を取得する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -143,7 +139,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -161,7 +157,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * returns length of array {配列の長さ}
+	 * returns length of array. {配列の長さ}
 	 *
 	 * @return int length of array {配列の長さ}
 	 */
@@ -171,10 +167,11 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * push a JSON object value into JSON array {JSONオブジェクト値をJSON配列に追加する}
+	 * push a JSON object value into JSON array. {JSONオブジェクト値をJSON配列に追加する}
 	 *
 	 * @param objJSON
 	 *            JSON object value {JSONオブジェクト値}
+	 * @return JSON
 	 */
 	@Override
 	public JSON push(JSON objJSON) {
@@ -182,7 +179,7 @@ public class JSONArray extends JSON {
 	}
 
 	/**
-	 * returns iterator {イテレータを返す}
+	 * returns iterator. {イテレータを返す}
 	 *
 	 * @return Iterator<JSON>
 	 */

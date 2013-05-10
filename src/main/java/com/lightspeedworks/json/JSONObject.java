@@ -1,6 +1,3 @@
-/**
- * JSON Object class {JSONオブジェクト・クラス}
- */
 package com.lightspeedworks.json;
 
 import java.util.ArrayList;
@@ -9,26 +6,25 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
 /**
- * JSON Object class {JSONオブジェクト・クラス}
+ * JSON Object class. {JSONオブジェクト・クラス}
  *
  * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
  */
 public class JSONObject extends JSON {
 	/**
-	 * contents of object {オブジェクトの内容}
+	 * contents of object. {オブジェクトの内容}
 	 */
-	private LinkedHashMap<Object, JSON> mapObject = null;
+	LinkedHashMap<Object, JSON> mapObject = null;
 
 	/**
-	 * constractor {コンストラクタ}
+	 * constractor. {コンストラクタ}
 	 */
 	public JSONObject() {
-		super();
-		this.mapObject = new LinkedHashMap<Object, JSON>();
+		mapObject = new LinkedHashMap<Object, JSON>();
 	}
 
 	/**
-	 * returns type of JSON object {JSONオブジェクトの型を返す}
+	 * returns type of JSON object. {JSONオブジェクトの型を返す}
 	 *
 	 * @return JSONType.OBJECT {オブジェクト型}
 	 */
@@ -38,7 +34,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * returns value of JSON object {JSONオブジェクトの値を返す}
+	 * returns value of JSON object. {JSONオブジェクトの値を返す}
 	 *
 	 * @return value of JSON object {JSONオブジェクトの値}
 	 */
@@ -48,7 +44,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * returns string value of JSON object {JSONオブジェクトの文字列値を返す}
+	 * returns string value of JSON object. {JSONオブジェクトの文字列値を返す}
 	 *
 	 * @return string value {文字列値}
 	 */
@@ -68,7 +64,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * returns JSON string format with level of depth (instance)
+	 * returns JSON string format with level of depth. (instance)
 	 * {深さレベルに応じたJSON文字列を返す(インスタンス)}
 	 *
 	 * @param level
@@ -123,7 +119,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * returns element of array or object by int key
+	 * returns element of array or object by int key.
 	 * {配列もしくはオブジェクトの要素を取得する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -136,7 +132,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * returns element of array or object by string key
+	 * returns element of array or object by string key.
 	 * {配列もしくはオブジェクトの要素を取得する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -149,7 +145,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * sets element into array or object and return self by int key
+	 * sets element into array or object and return self by int key.
 	 * {配列もしくはオブジェクトに要素を設定する(整数キーによる)}
 	 *
 	 * @param intKey
@@ -165,7 +161,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * sets element into array or object and return self by string key
+	 * sets element into array or object and return self by string key.
 	 * {配列もしくはオブジェクトに要素を設定する(文字列キーによる)}
 	 *
 	 * @param strKey
@@ -181,7 +177,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * returns iterator {イテレータを返す}
+	 * returns iterator. {イテレータを返す}
 	 *
 	 * @return Iterator<JSON>
 	 */
@@ -191,7 +187,7 @@ public class JSONObject extends JSON {
 	}
 
 	/**
-	 * length of array {配列の長さ}
+	 * length of array. {配列の長さ}
 	 *
 	 * @return int length of array {配列の長さ}
 	 */

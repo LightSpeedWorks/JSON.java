@@ -1,13 +1,18 @@
 package com.lightspeedworks.json;
 
+/**
+ * main 3.
+ *
+ * @author LightSpeedC (Kazuaki Nishizawa; 西澤 和晃)
+ */
 public class JSONWorkMain3 {
 
 	/**
-	 * main
+	 * main.
 	 *
-	 * @param args
+	 * @param args String...
 	 */
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		JSON obj;
 
 		try {
@@ -200,7 +205,6 @@ public class JSONWorkMain3 {
 			obj = JSON.create(12, 34, JSONType.OBJECT, JSONType.ARRAY, Object.class);
 			System.out.println("stringify = " + obj.stringify());
 		} catch (Exception e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 
