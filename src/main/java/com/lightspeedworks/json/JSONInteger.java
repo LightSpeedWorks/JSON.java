@@ -24,7 +24,8 @@ public class JSONInteger extends JSON {
 	/**
 	 * constractor. {コンストラクタ}
 	 *
-	 * @param intVal integer value {整数値}
+	 * @param intVal
+	 *            integer value {整数値}
 	 */
 	public JSONInteger(int intVal) {
 		this.intVal = intVal;
