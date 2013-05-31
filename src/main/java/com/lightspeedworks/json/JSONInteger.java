@@ -19,7 +19,7 @@ public class JSONInteger extends JSON {
 	/**
 	 * integer value. {整数値}
 	 */
-	private int intVal;
+	int intVal;
 
 	/**
 	 * constractor. {コンストラクタ}
